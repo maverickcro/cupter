@@ -1,6 +1,9 @@
 const open = document.getElementById('open')
 const close = document.getElementById('close')
 const container = document.querySelector('.container')
+const textEl = document.querySelector('.podnaslov')
+const text = 'Tradicionalna hercegovačka, broćanska slastica od autohtonih sorti grožđa žilavke i blatine.'
+let idx = 1
 
 open.addEventListener('click', () => {
     container.classList.add('show-nav')
@@ -9,3 +12,15 @@ open.addEventListener('click', () => {
 close.addEventListener('click', () => {
     container.classList.remove('show-nav')
 })
+
+writeText()
+
+function writeText() {
+
+    textEl.innerText = text.slice(0,idx)
+
+    idx++
+
+    
+    setTimeout(writeText, 50)
+}
