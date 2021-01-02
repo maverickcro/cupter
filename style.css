@@ -1,16 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+body::-webkit-scrollbar {
+  width: 22px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: inset 6px 12px 6px rgba(0, 0, 0, 0.3);
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: 100vh;
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
   margin: 0;
+  background-color: #333;
+  color: #222;
+}
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 5px;
+  z-index: 100;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: #fafafa;
+  margin: 40px 0;
+  transform: translateX(-110%);
+  transition: transform 0.4s ease-in;
+  cursor: pointer;
+}
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+.container {
+  background: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+.content {
+  margin: 50px auto;
+  max-width: 1000px;
+}
+.content img {
+  max-width: 100%;
+}
+.content p {
+  line-height: 1.5;
+}
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.circle-container.circle.show-nav {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  background-color: #ff7979;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: white;
+}
+.circle button:focus {
+  outline: none;
+}
+.circle button#open {
+  left: 60%;
+}
+.circle button#close {
+  top: 60%;
+
+  transform: rotate(90deg);
+  transform-origin: top left;
 }
