@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Redressed&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 body::-webkit-scrollbar {
   width: 22px;
 }
@@ -20,6 +19,7 @@ body::-webkit-scrollbar-thumb {
   box-sizing: border-box;
   font-family: "Open Sans Condensed", sans-serif;
   transition: 0.3s ease-in;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -48,6 +48,10 @@ nav ul li {
   transition: transform 0.4s ease-in;
   cursor: pointer;
 }
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
 nav ul li i {
   font-size: 20px;
   margin-right: 10px;
@@ -74,19 +78,19 @@ nav ul li + li + li {
   transform: translateX(0);
   transition-delay: 0.3s;
 }
-.content {
+.content1 {
   max-width: 100%;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
-.content img {
+.content1 img {
   max-width: 100%;
   height: 100vh;
   width: 100%;
 }
-.container h1 {
+.content1 h1 {
   color: #fafafa;
   -webkit-text-stroke: 1px black;
   cursor: pointer;
@@ -96,23 +100,19 @@ nav ul li + li + li {
   align-items: center;
   justify-content: center;
   top: 10%;
-  left: 60%;
-  transform: translateX(-50%);
+  word-break: break-all;
   text-shadow: 6px 12px 12px #b06214;
 }
-.container h5 {
+.content1 h5 {
   position: absolute;
   font-size: 29px;
   width: 1200px;
   align-items: center;
   justify-content: center;
-  font-family: "Redressed", cursive;
-  top: 28%;
-  left: 60%;
-  transform: translateX(-50%);
-  text-shadow: 6px 6px 12px #b06214;
+  font-family: "Oswald", sans-serif;
+  top: 20%;
 }
-.content p {
+.content1 p {
   line-height: 1.5;
 }
 .container.show-nav {
@@ -166,15 +166,25 @@ nav ul li + li + li {
 
 @media (max-width: 580px) {
   h1 {
-    font-size: 1.3rem;
   }
   h5 {
     font-size: 1rem;
+    word-break: break-all;
   }
-  .content {
+  .content h1 {
     align-items: center;
+    top: 20%;
+    font-size: 2.5rem;
+    width: 400px;
+    word-break: break-all;
   }
-  img {
+  .content h5 {
+    font-size: 1.6rem;
+    width: 425px;
+    word-break: break-all;
+  }
+  .content img {
     max-width: 100%;
+    width: 100%;
   }
 }

@@ -24,3 +24,28 @@ function writeText() {
     
     setTimeout(writeText, 50)
 }
+scrollTo = (element) => {
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: element.offsetTop
+    });
+    console
+  }
+  const pocetna = document.getElementById('pocetna')
+  pocetna.addEventListener('click', (e) => {
+      e.preventDefault()
+      scrollTo(document.getElementById('prvi'))
+      container.classList.remove('show-nav')
+  })
+
+  document.getElementById('onama').addEventListener('click', (e) => {
+    e.preventDefault()
+    scrollTo(document.getElementById('drugi'))
+    container.classList.remove('show-nav')
+})
+document.getElementById('kontakt').addEventListener('click', (e) => {
+    e.preventDefault()
+    scrollTo(document.getElementById('treci'))
+    container.classList.remove('show-nav')
+})
